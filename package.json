@@ -1,0 +1,108 @@
+{
+  "name": "cypress-angular-unit-test",
+  "version": "0.0.0-development",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --project tsconfig.lib.json",
+    "watch": "tsc --project tsconfig.lib.json -w",
+    "semantic-release": "semantic-release",
+    "cy:open": "cypress open-ct",
+    "cy:run": "cypress run",
+    "ng": "ng",
+    "app-start": "ng serve",
+    "app-build": "ng build",
+    "docker:run": "docker run -it -v ${PWD}:/e2e -w /e2e -e CYPRESS_updateSnapshots cypress/included:5.1.0"
+  },
+  "private": false,
+  "files": [
+    "dist",
+    "support.js"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "main": "dist/index.js",
+  "types": "dist",
+  "homepage": "https://github.com/bahmutov/cypress-angular-unit-test#readme",
+  "dependencies": {
+    "@cypress/mount-utils": "1.0.2",
+    "debug": "4.3.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "12.2.2",
+    "@angular/animations": "12.2.2",
+    "@angular/cdk": "12.2.2",
+    "@angular/cli": "12.2.2",
+    "@angular/common": "12.2.2",
+    "@angular/compiler": "12.2.2",
+    "@angular/compiler-cli": "12.2.2",
+    "@angular/core": "12.2.2",
+    "@angular/forms": "12.2.2",
+    "@angular/language-service": "12.2.2",
+    "@angular/localize": "12.2.2",
+    "@angular/material": "12.2.2",
+    "@angular/platform-browser": "12.2.2",
+    "@angular/platform-browser-dynamic": "12.2.2",
+    "@angular/router": "12.2.2",
+    "@cypress/code-coverage": "3.9.10",
+    "@cypress/webpack-dev-server": "1.4.0",
+    "@cypress/webpack-preprocessor": "5.9.1",
+    "@ngrx/store": "12.4.0",
+    "@types/cypress-image-snapshot": "3.1.6",
+    "@types/node": "14.17.11",
+    "angular-router-loader": "0.8.5",
+    "angular2-template-loader": "0.6.2",
+    "codelyzer": "6.0.2",
+    "core-js": "3.16.2",
+    "cypress": "8.3.0",
+    "cypress-angular-unit-test": "file:.",
+    "cypress-image-snapshot": "4.0.1",
+    "html-loader": "2.1.2",
+    "html-webpack-plugin": "5.3.2",
+    "husky": "4.3.8",
+    "istanbul-instrumenter-loader": "3.0.1",
+    "ng-inline-svg": "13.0.0",
+    "ngx-build-plus": "12.2.0",
+    "prettier": "2.3.2",
+    "pretty-quick": "3.1.1",
+    "primeng": "12.0.2",
+    "raw-loader": "1.0.0",
+    "rxjs": "7.3.0",
+    "semantic-release": "17.4.6",
+    "to-string-loader": "1.1.6",
+    "ts-loader": "9.2.5",
+    "ts-node": "10.2.1",
+    "tslib": "2.3.1",
+    "tslint": "5.20.1",
+    "typescript": "4.3.5",
+    "webpack-dev-server": "3.11.2",
+    "zone.js": "0.11.4"
+  },
+  "peerDependencies": {
+    "@angular/common": "*",
+    "@angular/compiler": "*",
+    "@angular/core": "*",
+    "@angular/platform-browser": "*",
+    "@angular/platform-browser-dynamic": "*",
+    "html-webpack-plugin": ">=4",
+    "core-js": "*",
+    "zone.js": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/cypress-angular-unit-test.git"
+  },
+  "release": {
+    "analyzeCommits": {
+      "preset": "angular",
+      "releaseRules": [
+        {
+          "type": "break",
+          "release": "major"
+        }
+      ]
+    }
+  }
+}
